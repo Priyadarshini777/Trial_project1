@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive HTML Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            margin: 10px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 Welcome to My Interactive Page!</h1>
+    <p>Click the buttons below to see the magic happen ✨</p>
+
+    <button onclick="sayHello()">Say Hello</button>
+    <button onclick="changeColor()">Change Background Color</button>
+    <button onclick="showTime()">Show Current Time</button>
+
+    <p id="message"></p>
+
+    <script>
+        function sayHello() {
+            document.getElementById("message").innerText = "👋 Hello, Docker is serving this page!";
+        }
+
+        function changeColor() {
+            const colors = ["#f4f4f4", "#ffcccb", "#cce7ff", "#ccffcc", "#ffffcc"];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function showTime() {
+            const now = new Date();
+            document.getElementById("message").innerText = "🕒 Current Time: " + now.toLocaleTimeString();
+        }
+    </script>
+</body>
+</html>
